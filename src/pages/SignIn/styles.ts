@@ -45,4 +45,5 @@ export const CreateAccountButtonText = styled.Text`
   color: #ff9000;
   font-size: 18px;
   font-family: "RobotoSlab-Regular";
+  margin-left: 8px;
 `;
