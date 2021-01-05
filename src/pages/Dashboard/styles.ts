@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 import { FlatList } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
-import { Provider } from "./index";
+import { Provider } from ".";
 
 export const Container = styled.View`
   flex: 1;
@@ -12,7 +12,6 @@ export const Header = styled.View`
   padding: 24px;
   padding-top: ${getStatusBarHeight() + 24}px;
   background: #28262e;
-
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -30,13 +29,6 @@ export const UserName = styled.Text`
   font-family: "RobotoSlab-Medium";
 `;
 
-export const ProvidersListTitle = styled.Text`
-  font-size: 24px;
-  margin-bottom: 24px;
-  color: #f4ede8;
-  font-family: "RobotoSlab-Medium";
-`;
-
 export const ProfileButton = styled.TouchableOpacity``;
 
 export const UserAvatar = styled.Image`
@@ -45,17 +37,30 @@ export const UserAvatar = styled.Image`
   border-radius: 28px;
 `;
 
-export const ProvidersList = styled(FlatList as new () => FlatList<Provider>)`
-  padding: 32px 24px 16px;
+export const ProvidersList = styled(
+  FlatList as new () => FlatList<Provider>
+).attrs({
+  contentContainerStyle: {
+    paddingTop: 32,
+    paddingBottom: 16,
+    paddingHorizontal: 24,
+  },
+})``;
+
+export const ProvidersListTitle = styled.Text`
+  font-family: "RobotoSlab-Medium";
+  color: #f4ede8;
+  font-size: 24px;
+  margin-bottom: 24px;
 `;
 
 export const ProviderContainer = styled(RectButton)`
-  background: #3e3b47;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 16px;
   flex-direction: row;
   align-items: center;
+  padding: 20px;
+  margin-bottom: 16px;
+  background: #3e3b47;
+  border-radius: 10px;
 `;
 
 export const ProviderAvatar = styled.Image`
