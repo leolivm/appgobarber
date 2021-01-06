@@ -131,10 +131,20 @@ const Profile: React.FC = () => {
           return;
         }
 
-        const source = { uri: res.uri };
+        const data = new FormData();
+
+        data.append("avatar", {
+          type: "image/jpeg",
+          name: `${user.id}.jpg`,
+          uri: res.uri,
+        });
+
+        api.patch("users/avatar", data).then((res) => {
+          updateUser(res.data);
+        });
       }
     );
-  }, []);
+  }, [updateUser, user.id]);
 
   return (
     <>
