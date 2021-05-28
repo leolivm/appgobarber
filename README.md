@@ -16,9 +16,8 @@
 
 Technologies that I used to develop this mobile client
 
-- [ReactJS](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
 - [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [React Navigation](https://reactnavigation.org/)
 - [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
 - [UnForm](https://unform.dev/) [💜](https://rocketseat.com.br/)
